@@ -1,0 +1,101 @@
+# ============================================================
+# Lista de padrões adicionais para incluir no backup
+# ============================================================
+# Regras:
+# - Um padrão por linha.
+# - Linhas que começam com "#" são comentários.
+# - Padrões seguem estilo glob (como em find).
+# - Exemplo: "*.pdf" inclui todos os arquivos PDF encontrados
+#   nas pastas-alvo do backup.
+# ============================================================
+
+# Documentos de escritório
+*.doc
+*.docx
+*.odt
+*.rtf
+*.pdf
+*.xls
+*.xlsx
+*.ods
+*.csv
+*.ppt
+*.pptx
+*.odp
+*.txt
+*.md
+
+# Imagens
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.ico
+*.svg
+*.webp
+
+# Áudio
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+*.m4a
+
+# Vídeo
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+
+# Arquivos compactados e backups manuais
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+*.xz
+*.iso
+
+# Código-fonte / scripts
+*.py
+*.js
+*.ts
+*.java
+*.c
+*.cpp
+*.h
+*.cs
+*.go
+*.rb
+*.php
+*.html
+*.css
+*.json
+*.xml
+*.yaml
+*.yml
+*.sh
+*.bat
+*.ps1
+
+# Configurações e bases de dados locais
+*.ini
+*.conf
+*.cfg
+*.db
+*.sqlite
+*.sql
+*.bak
+
+# Outros arquivos úteis
+*.log
+*.chm
+*.epub
+*.mobi

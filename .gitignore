@@ -1,0 +1,56 @@
+# ===========================
+# Arquivos e pastas do sistema
+# ===========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# ===========================
+# Linux/Cache/Temporários
+# ===========================
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.log
+*.lock
+
+# ===========================
+# Python (caso use libs/scripts Python)
+# ===========================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+env/
+venv/
+
+# ===========================
+# Arquivos de Backup/Restore
+# ===========================
+*.7z
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.sha256
+/mnt/backups_windows/
+/tmp/
+/var/log/winbackup.log
+/var/log/winrestore.log
+
+# ===========================
+# VSCode/JetBrains
+# ===========================
+.vscode/
+.idea/
+
+# ===========================
+# Outros
+# ===========================
+*.retry
+*.out

@@ -1,0 +1,142 @@
+# ============================================================
+# Configuração da Ferramenta de Backup/Restore de Windows (Linux)
+# ============================================================
+# - Define raiz dos backups, políticas de rotação e criptografia.
+# - Lista quais pastas (Known Folders) e padrões de arquivos incluir/excluir.
+# - Permite múltiplos usuários (ou apenas o atual).
+# ============================================================
+
+# Onde os backups compactados serão salvos (em Linux)
+backup_root: "/mnt/backups_windows"
+
+# Rotação de backups (manter últimos N ou até X dias)
+rotation:
+  keep_last: 5          # Quantos pacotes manter
+  max_age_days: 30      # Excluir backups mais antigos que X dias
+  prefix: "winbackup"   # Prefixo no nome do arquivo final
+
+# Criptografia do pacote (.7z apenas)
+encryption:
+  enabled: false              # true = habilita criptografia
+  password_env: "BACKUP_PASSWORD"   # variável de ambiente que guarda a senha
+
+# Usuários do Windows a considerar
+users:
+  - all
+
+# Pastas conhecidas a incluir
+includes:
+  known_folders:
+    # Perfis de usuário
+    - Desktop
+    - Documents
+    - Downloads
+    - Pictures
+    - Videos
+    - Music
+    - Favorites
+    - AppDataRoaming
+    - AppDataLocal
+    - UserProfile
+    
+  # Padrões adicionais de arquivos (extensões, glob)
+  patterns:
+    # Documentos de escritório
+    - "*.doc"      # Word
+    - "*.docx"
+    - "*.odt"
+    - "*.rtf"
+    - "*.pdf"
+    - "*.xls"      # Excel
+    - "*.xlsx"
+    - "*.ods"
+    - "*.csv"
+    - "*.ppt"      # PowerPoint
+    - "*.pptx"
+    - "*.odp"
+    - "*.txt"
+    - "*.md"
+
+    # Arquivos de imagens
+    - "*.jpg"
+    - "*.jpeg"
+    - "*.png"
+    - "*.gif"
+    - "*.bmp"
+    - "*.tiff"
+    - "*.ico"
+
+    # Áudio e vídeo
+    - "*.mp3"
+    - "*.wav"
+    - "*.ogg"
+    - "*.flac"
+    - "*.mp4"
+    - "*.mkv"
+    - "*.avi"
+    - "*.mov"
+    - "*.wmv"
+
+    # Arquivos de código/fonte
+    - "*.py"
+    - "*.js"
+    - "*.ts"
+    - "*.java"
+    - "*.c"
+    - "*.cpp"
+    - "*.h"
+    - "*.cs"
+    - "*.go"
+    - "*.rb"
+    - "*.php"
+    - "*.html"
+    - "*.css"
+    - "*.json"
+    - "*.xml"
+    - "*.yaml"
+    - "*.yml"
+
+    # Arquivos compactados
+    - "*.zip"
+    - "*.rar"
+    - "*.7z"
+    - "*.tar"
+    - "*.gz"
+
+# Exclusões globais (não entram no backup)
+excludes:
+  # Pastas de cache e temporárias
+  - "**/AppData/Local/Temp/**"
+  - "**/AppData/Local/Microsoft/Windows/INetCache/**"
+  - "**/AppData/Local/CrashDumps/**"
+  - "**/AppData/Local/Google/Chrome/User Data/Default/Cache/**"
+  - "**/AppData/Local/Mozilla/Firefox/Profiles/*/cache2/**"
+  - "**/AppData/Roaming/Microsoft/Windows/Recent/**"
+
+  # Pastas de sistema que não devem ser copiadas
+  - "**/Windows/Temp/**"
+  - "**/Windows/Logs/**"
+  - "**/Windows/WinSxS/Temp/**"
+  - "**/Windows/SoftwareDistribution/Download/**"
+  - "**/Windows/System32/LogFiles/**"
+
+  # Artefatos de desenvolvimento
+  - "**/node_modules/**"
+  - "**/.cache/**"
+  - "**/.git/**"
+  - "**/dist/**"
+  - "**/build/**"
+  - "**/.venv/**"
+  - "**/__pycache__/**"
+
+  # Arquivos muito grandes irrelevantes (ex.: ISOs)
+  - "*.iso"
+  - "*.vhd"
+  - "*.vhdx"
+  - "*.img"
+  - "*.dmg"
+  
+# Inventário de softwares
+inventory:
+  enabled: true
+  # Relatórios serão salvos no pacote: InstalledSoftware.json + InstalledSoftwareReport.md
