@@ -535,6 +535,3 @@ src/RestoreWindows.sh --source /tmp/restore_root --verify-only
 | `{{ProgramData}}`     | `/media/win/ProgramData`                  |
 | `{{Windows}}`         | `/media/win/Windows`                      |
 
----
-
-Se desejar, posso gerar um **checklist de QA** para validar ponta-a-ponta (backup → extração → reidratação `files/` → restore), ou ainda um **timer systemd** completo com *hardening* (PrivateTmp, ReadWritePaths, etc.).
